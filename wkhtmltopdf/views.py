@@ -22,7 +22,7 @@ class PDFResponse(HttpResponse):
             content_type = 'application/pdf'
 
         super(PDFResponse, self).__init__(content=content,
-                                          mimetype=mimetype,
+                                          #mimetype=mimetype,
                                           status=status,
                                           content_type=content_type)
         self.set_filename(filename, show_content_in_browser)
@@ -53,7 +53,7 @@ class PDFTemplateResponse(TemplateResponse, PDFResponse):
         super(PDFTemplateResponse, self).__init__(request=request,
                                                   template=template,
                                                   context=context,
-                                                  mimetype=mimetype,
+                                                  #mimetype=mimetype,
                                                   status=status,
                                                   content_type=content_type,
                                                   current_app=None,
